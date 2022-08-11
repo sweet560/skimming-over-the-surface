@@ -140,6 +140,11 @@
   <ItemGroup>
     <ClInclude Include="d:\sweet\Desktop\《浮光掠影》 C 语言模式\head.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include="README.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
