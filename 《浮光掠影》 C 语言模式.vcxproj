@@ -101,9 +101,11 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,23 +129,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="d:\sweet\Desktop\《浮光掠影》 C 语言模式\diary_function.c" />
-    <ClCompile Include="d:\sweet\Desktop\《浮光掠影》 C 语言模式\diary_system.c" />
-    <ClCompile Include="d:\sweet\Desktop\《浮光掠影》 C 语言模式\login_screen.c" />
-    <ClCompile Include="d:\sweet\Desktop\《浮光掠影》 C 语言模式\main.c" />
-    <ClCompile Include="d:\sweet\Desktop\《浮光掠影》 C 语言模式\menu.c" />
-    <ClCompile Include="d:\sweet\Desktop\《浮光掠影》 C 语言模式\personal_center.c" />
-    <ClCompile Include="d:\sweet\Desktop\《浮光掠影》 C 语言模式\variable.c" />
-    <ClCompile Include="d:\sweet\Desktop\《浮光掠影》 C 语言模式\welcome.c" />
-    <ClCompile Include="d:\sweet\Desktop\《浮光掠影》 C 语言模式\wheel.c" />
+    <ClCompile Include="diary_function.c" />
+    <ClCompile Include="diary_system.c" />
+    <ClCompile Include="login_screen.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="menu.c" />
+    <ClCompile Include="personal_center.c" />
+    <ClCompile Include="variable.c" />
+    <ClCompile Include="welcome.c" />
+    <ClCompile Include="wheel.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="d:\sweet\Desktop\《浮光掠影》 C 语言模式\head.h" />
+    <ClInclude Include="head.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitattributes" />
     <None Include=".gitignore" />
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="LICENSE.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
