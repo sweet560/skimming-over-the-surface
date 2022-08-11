@@ -55,7 +55,8 @@ void illegal_input(void) //非法输入
 	printf("\t---  输入错误!  ---\n");
 	printf("\t-------------------\n\n");
 	border();  //横线
-	getchar(); //清空缓冲区
+	//getchar();
+	while ((ch = getchar()) != '\n' && ch != EOF);
 	CLS();	   //清屏、暂停
 }
 

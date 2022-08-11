@@ -10,6 +10,7 @@
 #include <conio.h> //getch() 原型
 #include <time.h>  //时间函数头文件
 #include <io.h>    //chdir() 原型   创建文件 更改打开文件路径函数头文件
+#include <direct.h>
 
 //常量列表
 #define ZERO 0
@@ -20,9 +21,11 @@
 
 //引用全局变量、指针
 extern bool b;
-extern int a, ch, _dir, _scf;
-extern char line[SIZE1], name[SIZE], pws[SIZE], UserAccount[SIZE], PassWords[SIZE], time_str[BUFFER], diary_user[SIZE1 + SIZE1];
+extern int a, ch, _dir, _scf, number;
+extern char line[SIZE1], name[SIZE], pws[SIZE], UserAccount[SIZE], PassWords[SIZE], time_str[BUFFER], time_str_1[BUFFER], diary_user[SIZE1 + SIZE1];
 FILE *fp; //文件指针
+time_t now_time;//声明 time_t 类型变量
+struct tm* info; // tm 结构指针
 
 //函数声明列表
 void border(void);        //边框

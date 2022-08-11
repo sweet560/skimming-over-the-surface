@@ -10,11 +10,11 @@
         3.登陆后，拥有 修改密码、日记系统、注销登陆等功能
         4.进入日记系统，拥有：写日记、查阅日记、删除日记、导入日记、导出日记等功能（还在完善中）
 
-版本：0.0.1.20220811_base 时间：2022年08月11日 作者：伍悦匿匿 联系方式：437830488@qq.com 
+版本：V1.08.17-alpha 时间：2022年08月17日 作者：伍悦匿匿 联系方式：437830488@qq.com 
 
 GitHub：https://github.com/sweet560
 
-博客远：https://www.cnblogs.com/wuyuenini/
+博客园：https://www.cnblogs.com/wuyuenini/
 
 CSDN：https://blog.csdn.net/weixin_42076389
 
