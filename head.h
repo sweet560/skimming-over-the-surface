@@ -22,10 +22,11 @@
 //引用全局变量、指针
 extern bool b;
 extern int a, ch, _dir, _scf, number;
+extern char content;
 extern char line[SIZE1], name[SIZE], pws[SIZE], UserAccount[SIZE], PassWords[SIZE], time_str[BUFFER], time_str_1[BUFFER], diary_user[SIZE1 + SIZE1];
-FILE *fp; //文件指针
-time_t now_time;//声明 time_t 类型变量
-struct tm* info; // tm 结构指针
+FILE *fp;        //文件指针
+time_t now_time; //声明 time_t 类型变量
+struct tm *info; // tm 结构指针
 
 //函数声明列表
 void border(void);        //边框
@@ -47,6 +48,7 @@ void diary_menu(void);     //日记软件菜单
 void write_diary(void);    //写日记
 void diary_menu_1(void);   // write_diary()菜单
 void consult_diary(void);  //查阅日记
+void read_file_name(void); //文件名读取
 void delete_diary(void);   //删除日记
 void import_diary(void);   //导入日记
 void export_diary(void);   //导出日记

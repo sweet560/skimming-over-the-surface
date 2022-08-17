@@ -35,6 +35,15 @@ void write_diary(void) //写日记
                         fclose(fp);
                         strcat(diary_name, diary_user); //在str1 后面添加 str2 的内容
                         system(diary_name);             //使用window cmd 命令打开指定文件
+
+                        //生成log.bat 
+                        if ((fp = fopen("log.bat", "a+")) == NULL)
+                        {
+                            printf("创建失败!\n");
+                            exit(EXIT_FAILURE);
+                        }
+                        fprintf(fp, "%s\n", diary_user);    //将文件夹名称写入 log.bat
+                        fclose(fp); //关闭 log.bat
                     }
                     break;
                 }
@@ -52,6 +61,15 @@ void write_diary(void) //写日记
                         fclose(fp);
                         strcat(diary_name, time_str_1);
                         system(diary_name);
+
+                        //生成log.bat 
+                        if ((fp = fopen("log.bat", "a+")) == NULL)
+                        {
+                            printf("创建失败!\n");
+                            exit(EXIT_FAILURE);
+                        }
+                        fprintf(fp, "%s\n", time_str_1);    //将文件夹名称写入 log.bat
+                        fclose(fp); //关闭 log.bat
                     }
                     break;
                 }
@@ -73,38 +91,34 @@ void write_diary(void) //写日记
 }
 void consult_diary(void) //查阅日记
 {
-    char content;
-    int inpt = ZERO;
-    char num[SIZE];
+    char* diary_name = (char*)malloc(strlen("start ") + strlen(name));
+    strcpy(diary_name, "start ");
 
-    border();
-    if ((fp = fopen("log.txt", "r")) == NULL)   //  "r"  只读
+    while (b)
     {
-        printf("读取失败!\n");
-        exit(EXIT_FAILURE);
+        read_file_name();   //读取文件内容
+        
+        printf("输入要查看的月份: ");
+        scanf("%s", name);
+        _dir = chdir(name);
+        if (_dir == 0)
+        {
+            while (b)
+            {
+                CLS();
+                read_file_name();   //读取文件内容
+                printf("输入要查看的日记: ");
+                scanf("%s", name);
+                strcat(diary_name, name);
+                system(diary_name);
+                strcpy(diary_name, "start ");
+            }
+            chdir("..");
+        }
+        else  //输入错误
+            illegal_input();
     }
-    while ((content = fgetc(fp)) != EOF)
-    {
-        putchar(content);
-        printf("%d\n", inpt);
-        num[inpt++] = content;
-        printf("%d %s\n", inpt, num[inpt]);
-    }
-    border();
-    printf("输入要查看的月份:");
-    while ((scanf("%d", &number)) == 1)
-    {
-        printf("%d %s\n", number, num[number]);
-        char* diary_name = (char*)malloc(strlen("start ") + strlen(num[number]));
-
-        strcpy(diary_name, "start ");
-        strcat(diary_name, num[number]);
-
-        printf("输入要查看的月份:");
-        free(diary_name);
-    }
-    system("pause");
-
+    free(diary_name);
 }
 void delete_diary(void) //删除日记
 {

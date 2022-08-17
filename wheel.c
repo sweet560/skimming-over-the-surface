@@ -76,3 +76,17 @@ void progress_bar(void) //进度条
 	}
 	printf("\n");
 }
+
+void read_file_name(void)
+{
+	border();
+	if ((fp = fopen("log.bat", "r")) == NULL)   //  "r"  只读
+	{
+		printf("读取失败!\n");
+		exit(EXIT_FAILURE);
+	}
+	while ((content = fgetc(fp)) != EOF)    //读取文件内容显示到屏幕上
+		putchar(content);
+	fclose(fp);
+	border();
+}
