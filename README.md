@@ -1,6 +1,6 @@
 # 浮光掠影
 [![star](https://gitee.com/wtt520wyl/skimming-over-the-surface/badge/star.svg?theme=dark)](https://gitee.com/wtt520wyl/skimming-over-the-surface/stargazers)
-![version](https://badgen.net/badge/version/V1.08.19-alpha/blue?icon=github&label)
+[![version](https://badgen.net/badge/version/V1.08.19-alpha/blue?icon=github&label)](https://badgen.net/badge/version/V1.08.19-alpha/blue?icon=github&label)
 #### 介绍
 以 C 语言为主要语言开发，可以在 window系统中运行的.exe程序，目前居于 cmd 界面
 
@@ -11,7 +11,7 @@
         3.登陆后，拥有 修改密码、日记系统、注销登陆等功能
         4.进入日记系统，拥有：写日记、查阅日记、删除日记、导入日记、导出日记等功能（还在完善中）
 
-版本：V1.08.19-alpha 时间：2022年08月19日 
+版本：V1.08.19-alpha 时间：2022年08月19日
 
 作者：伍悦匿匿
 
