@@ -1,21 +1,21 @@
 /**
- * @file   <¸¡¹âÂÓÓ°> Window 10 Cmd´°¿Ú Ä£Ê½ÏÂÔËĞĞ
- * @author ÎéÔÃÄäÄä(437830488@qq.com)
- * @brief  ÔÚÕâÀï¼ÇÂ¼ÏÂµãµãµÎµÎ£¬ÈÃÍùÈÕµÄËêÔÂÓÌÈç½ñÏ¦£º¸¡¹âÂÓÓ°£¬ËêÔÂÈçËó
- * @date  2022-08-18
- * @version  V1.08.18-alpha
- * @copyright Copyright (c) 2022 ÎéÔÃÄäÄä¹¤×÷ÊÒ
+ * @file   <æµ®å…‰æ å½±> Window 10 Cmdçª—å£ æ¨¡å¼ä¸‹è¿è¡Œ
+ * @author ä¼æ‚¦åŒ¿åŒ¿(437830488@qq.com)
+ * @brief  åœ¨è¿™é‡Œè®°å½•ä¸‹ç‚¹ç‚¹æ»´æ»´ï¼Œè®©å¾€æ—¥çš„å²æœˆçŠ¹å¦‚ä»Šå¤•ï¼šæµ®å…‰æ å½±ï¼Œå²æœˆå¦‚æ¢­
+ * @date  2022-08-19
+ * @version  V1.08.19-alpha
+ * @copyright Copyright (c) 2022 ä¼æ‚¦åŒ¿åŒ¿å·¥ä½œå®¤
  */
 #include "head.h"
 
-//¶¨ÒåÈ«¾Ö±äÁ¿
+//å®šä¹‰å…¨å±€å˜é‡
 int a = ZERO, ch = ZERO, _dir = ZERO, _scf = ZERO, number = ZERO;
-bool b = true;                                             //Õæ true  ¼Ù false
-char content = ZERO;                                       //ÎÄ¼şÄÚÈİ
-char line[SIZE1] = {ZERO};                                 // line[] Ò»ĞĞ
-char name[SIZE] = {ZERO}, pws[SIZE] = {ZERO};              // name[] pws[]ÎÄ¼şÖĞµÄÕË»§¼°ÃÜÂë
-char name_1[SIZE] = { ZERO }, pws_1[SIZE] = { ZERO };		   //ÓÃÓÚ¶Ô±ÈÄÚÈİ
-char UserAccount[SIZE] = {ZERO}, PassWords[SIZE] = {ZERO}; // UserAccount[] PassWords[]ÊäÈëµÄÕË»§¼°ÃÜÂë
-char time_str[BUFFER] = {ZERO};                            //±íÊ¾·µ»ØµÄÊ±¼äµÄ×Ö·û´®
-char time_str_1[BUFFER] = {ZERO};                          //±íÊ¾·µ»ØµÄÊ±¼äµÄ×Ö·û´®
-char diary_user[SIZE1 + SIZE1] = {ZERO};                   //ÓÃÓÚ´¢´æÈÕ¼ÇÃû×Ö
+bool b = true;                                             //çœŸ true  å‡ false
+char content = ZERO;                                       //æ–‡ä»¶å†…å®¹
+char line[SIZE1] = {ZERO};                                 // line[] ä¸€è¡Œ
+char name[SIZE] = {ZERO}, pws[SIZE] = {ZERO};              // name[] pws[]æ–‡ä»¶ä¸­çš„è´¦æˆ·åŠå¯†ç 
+char name_1[SIZE] = { ZERO }, pws_1[SIZE] = { ZERO };		   //ç”¨äºå¯¹æ¯”å†…å®¹
+char UserAccount[SIZE] = {ZERO}, PassWords[SIZE] = {ZERO}; // UserAccount[] PassWords[]è¾“å…¥çš„è´¦æˆ·åŠå¯†ç 
+char time_str[BUFFER] = {ZERO};                            //è¡¨ç¤ºè¿”å›çš„æ—¶é—´çš„å­—ç¬¦ä¸²
+char time_str_1[BUFFER] = {ZERO};                          //è¡¨ç¤ºè¿”å›çš„æ—¶é—´çš„å­—ç¬¦ä¸²
+char diary_user[SIZE1 + SIZE1] = {ZERO};                   //ç”¨äºå‚¨å­˜æ—¥è®°åå­—
