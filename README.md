@@ -3,7 +3,7 @@
 [![version](https://badgen.net/badge/version/V1.08.19-alpha/blue?icon=github&label)](https://badgen.net/badge/version/V1.08.19-alpha/blue?icon=github&label)
 #### 介绍
 
-以 C 语言为主要语言开发，可以在 window系统中运行的.exe程序，目前居于 cmd 界面
+以 C 语言为主要语言开发，可以在 window系统中运行的.exe程序，目前居于 cmd 界面 
 
 #### 软件架构
 
