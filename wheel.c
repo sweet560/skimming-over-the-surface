@@ -1,5 +1,12 @@
 #include "head.h"
-
+/* 
+	释放输入缓冲区 几种方法：
+	1. scanf("%*[^\n]%*c");
+	2. while((getchar()) !='\n");
+	3. gtechar();
+	4. rewind(stdin);
+	5. fflush(stdin);	在C++11 标准后，输入流被称为“未定义” 不建议使用
+*/
 void border(void) //横线
 {
 	int i;
@@ -27,7 +34,8 @@ char hidden_number(char number[SIZE]) //获取输入的内容显示为 *
 			{
 				*(number + i++) = input; //通过指针给数组赋值
 				printf("*");			 //回显*号
-				fflush(stdin);
+				//fflush(stdin);
+				scanf("%*[^\n]%*c");
 				flag++;
 			}
 			if (input == '\b' && flag != 0) //为了不让\b \b也删除掉输入密码前的提示文字即判断flag是否为0
@@ -40,7 +48,8 @@ char hidden_number(char number[SIZE]) //获取输入的内容显示为 *
 		else
 		{
 			*(number + i) = '\0'; //\0不能忘记
-			fflush(stdin);
+			//fflush(stdin);
+			scanf("%*[^\n]%*c");
 			printf("\n");
 			return input; //函数调用结束
 		}
@@ -56,7 +65,7 @@ void illegal_input(void) //非法输入
 	printf("\t-------------------\n\n");
 	border();  //横线
 	//getchar();
-	while ((ch = getchar()) != '\n' && ch != EOF);
+	while ((getchar()) != '\n');
 	CLS();	   //清屏、暂停
 }
 

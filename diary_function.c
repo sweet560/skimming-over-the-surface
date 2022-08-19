@@ -105,15 +105,56 @@ void consult_diary(void) //查阅日记
         {
             while (b)
             {
-                CLS();
-                read_file_name();   //读取文件内容
-                printf("输入要查看的日记: ");
-                scanf("%s", name);
-                strcat(diary_name, name);
-                system(diary_name);
-                strcpy(diary_name, "start ");
+                if (_dir == 0)
+                {
+                    CLS();
+                    read_file_name();   //读取文件内容
+                    printf("输入要查阅的日记: ");
+                    fp = fopen("log.bat", "r");
+                    while ((scanf("%s", name)) == 1)
+                    {
+                        //输入文件名错误
+                        if ((fgets(line, sizeof(line), fp)) != NULL)
+                        {
+                            sscanf(line, "%s", name_1);
+                            if (!strcmp(name_1, name))
+                            {
+                                //打开指定文件
+                                strcat(diary_name, name);
+                                system(diary_name);
+                                strcpy(diary_name, "start ");
+                                while ((getchar()) != '\n');
+                                break;
+                            }
+                            else
+                            {
+                                border();
+                                printf("输入错误!\n");
+                                printf("输入要查阅的日记: ");
+                            }
+                        } 
+                    }
+                    fclose(fp);
+                }
+                border();
+                printf("是否继续查阅其他日记( Y / N ): ");
+                while ((ch = getchar()) != EOF)
+                {
+                    if (ch == 'Y' || ch == 'y')
+                        break;
+                    else if (ch == 'N' || ch == 'n')    //返回日记系统主菜单
+                    {
+                        chdir("..");
+                        return 0;
+                    }
+                    else
+                    {
+                        illegal_input();
+                        border();
+                        printf("是否继续查阅其他日记( Y / N ): ");
+                    }
+                }
             }
-            chdir("..");
         }
         else  //输入错误
             illegal_input();

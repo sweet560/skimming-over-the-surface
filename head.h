@@ -23,7 +23,8 @@
 extern bool b;
 extern int a, ch, _dir, _scf, number;
 extern char content;
-extern char line[SIZE1], name[SIZE], pws[SIZE], UserAccount[SIZE], PassWords[SIZE], time_str[BUFFER], time_str_1[BUFFER], diary_user[SIZE1 + SIZE1];
+extern char line[SIZE1], name[SIZE], pws[SIZE], name_1[SIZE], pws_1[SIZE], UserAccount[SIZE], PassWords[SIZE]; 
+extern char time_str[BUFFER], time_str_1[BUFFER], diary_user[SIZE1 + SIZE1];
 FILE *fp;        //文件指针
 time_t now_time; //声明 time_t 类型变量
 struct tm *info; // tm 结构指针
