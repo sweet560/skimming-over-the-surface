@@ -2,9 +2,11 @@
 [![star](https://gitee.com/wtt520wyl/skimming-over-the-surface/badge/star.svg?theme=dark)](https://gitee.com/wtt520wyl/skimming-over-the-surface/stargazers)
 [![version](https://badgen.net/badge/version/V1.08.19-alpha/blue?icon=github&label)](https://badgen.net/badge/version/V1.08.19-alpha/blue?icon=github&label)
 #### 介绍
+
 以 C 语言为主要语言开发，可以在 window系统中运行的.exe程序，目前居于 cmd 界面
 
 #### 软件架构
+
 功能介绍：
         1.启动程序时的欢迎界面、自动跳转等功能
         2.登陆界面，拥有 账户登陆、账户注册等功能
