@@ -97,7 +97,6 @@ void consult_diary(void) //查阅日记
     while (b)
     {
         read_file_name();   //读取文件内容
-        
         printf("输入要查看的月份: ");
         scanf("%s", name);
         _dir = chdir(name);
@@ -110,8 +109,9 @@ void consult_diary(void) //查阅日记
                     CLS();
                     read_file_name();   //读取文件内容
                     printf("输入要查阅的日记: ");
+                    scanf("%s", name);
                     fp = fopen("log.bat", "r");
-                    while ((scanf("%s", name)) == 1)
+                    while (b)
                     {
                         //输入文件名错误
                         if ((fgets(line, sizeof(line), fp)) != NULL)
@@ -125,14 +125,16 @@ void consult_diary(void) //查阅日记
                                 strcpy(diary_name, "start ");
                                 while ((getchar()) != '\n');
                                 break;
-                            }
-                            else
-                            {
-                                border();
-                                printf("输入错误!\n");
-                                printf("输入要查阅的日记: ");
-                            }
-                        } 
+                            } 
+                        }
+                        else
+                        {
+                            border();
+                            printf("输入错误!\n");
+                            printf("输入要查阅的日记: ");
+                            scanf("%s", name);
+                            rewind(fp);
+                        }     
                     }
                     fclose(fp);
                 }
@@ -162,10 +164,25 @@ void consult_diary(void) //查阅日记
     free(diary_name);
 }
 void delete_diary(void) //删除日记
-{
-    char name_2[SIZE] = {"DEL cs.txt"}; //运行前先新建一个  cs.txt 文件
-    system("DEL cs.txt");
-    system("pause");
+{/*
+    remove(); 用于删除文件
+ */
+    while (b)
+    {
+        read_file_name();   //位于 用户名 文件
+        whether_delete();
+        printf("输入要查看的内容: ");
+        scanf("%s", name);
+        _dir = chdir(name);
+        if (_dir == 0)
+        {
+            read_file_name();   //位于 月份名 文件
+            whether_delete();
+            chdir("..");
+        }
+        else
+            illegal_input();
+    }
 }
 void import_diary(void) //导入日记
 {

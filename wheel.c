@@ -86,7 +86,7 @@ void progress_bar(void) //进度条
 	printf("\n");
 }
 
-void read_file_name(void)
+void read_file_name(void)	//读取文件内容
 {
 	border();
 	if ((fp = fopen("log.bat", "r")) == NULL)   //  "r"  只读
@@ -98,4 +98,50 @@ void read_file_name(void)
 		putchar(content);
 	fclose(fp);
 	border();
+}
+
+void whether_delete(void) //是否删除
+{
+	getchar();
+	printf("是否要删除内容( Y / N ): ");
+	while ((ch = getchar()) != EOF)
+	{
+		fp = fopen("log.bat", "r+");
+		if (ch == 'Y' || ch == 'y')
+		{
+			printf("请输入要删除的文件夹全称: ");
+			scanf("%s", name);
+			printf("%s", name);
+			while (b)
+			{
+				if ((fgets(line, sizeof(line), fp)) != NULL)
+				{
+					sscanf(line, "%s", name_1);
+					printf("%s", name_1);
+					if (!strcmp(name_1, name))
+					{
+						remove(name);   //删除文件
+						break;
+					}
+				}
+				else
+				{
+					border();
+					printf("输入错误!\n");
+					printf("请输入要删除的文件夹全称: ");
+					scanf("%s", name);
+				}
+			}
+			printf("是否继续删除文件( Y / N ): ");
+		}
+		else if (ch == 'N' || ch == 'n')
+			break;
+		else
+		{
+			border();
+			printf("输入错误!\n");
+			printf("是否要删除内容( Y / N ): ");
+		}
+		fclose(fp);
+	}
 }

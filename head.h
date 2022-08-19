@@ -51,6 +51,7 @@ void diary_menu_1(void);   // write_diary()菜单
 void consult_diary(void);  //查阅日记
 void read_file_name(void); //文件名读取
 void delete_diary(void);   //删除日记
+void whether_delete(void); //是否删除
 void import_diary(void);   //导入日记
 void export_diary(void);   //导出日记
 
