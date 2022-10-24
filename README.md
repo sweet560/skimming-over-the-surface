@@ -1,6 +1,6 @@
 # 浮光掠影
 [![star](https://gitee.com/wtt520wyl/skimming-over-the-surface/badge/star.svg?theme=dark)](https://gitee.com/wtt520wyl/skimming-over-the-surface/stargazers)
-[![version](https://badgen.net/badge/version/V1.08.20-alpha/blue?icon=github&label)](https://badgen.net/badge/version/V1.08.20-alpha/blue?icon=github&label)
+[![version](https://badgen.net/badge/version/V1.10.24-alpha/blue?icon=github&label)](https://badgen.net/badge/version/V1.08.20-alpha/blue?icon=github&label)
 #### 介绍
 
 以 C 语言为主要语言开发，可以在 window系统中运行的.exe程序，目前居于 cmd 界面 
