@@ -1,13 +1,13 @@
 #include "head.h"
-/* 
-	ÊÍ·ÅÊäÈë»º³åÇø ¼¸ÖÖ·½·¨£º
+/*
+	é‡Šæ”¾è¾“å…¥ç¼“å†²åŒº å‡ ç§æ–¹æ³•ï¼š
 	1. scanf("%*[^\n]%*c");
 	2. while((getchar()) !='\n");
 	3. gtechar();
 	4. rewind(stdin);
-	5. fflush(stdin);	ÔÚC++11 ±ê×¼ºó£¬ÊäÈëÁ÷±»³ÆÎª¡°Î´¶¨Òå¡± ²»½¨ÒéÊ¹ÓÃ
+	5. fflush(stdin);	åœ¨C++11 æ ‡å‡†åï¼Œè¾“å…¥æµè¢«ç§°ä¸ºâ€œæœªå®šä¹‰â€ ä¸å»ºè®®ä½¿ç”¨
 */
-void border(void) //ºáÏß
+void border(void) //æ¨ªçº¿
 {
 	int i;
 	printf("\n");
@@ -16,100 +16,100 @@ void border(void) //ºáÏß
 	printf("\n");
 }
 
-void CLS(void) //ÔİÍ£ÇåÆÁ
+void CLS(void) //æš‚åœæ¸…å±
 {
-	Sleep(500);	   // 1000ºÁÃë == 1Ãë **×¢Òâ S Òª´óĞ´ Ğ¡Ğ´µÄ²»ĞĞ**
-	system("cls"); //ÇåÆÁ
+	Sleep(500);	   // 1000æ¯«ç§’ == 1ç§’ **æ³¨æ„ S è¦å¤§å†™ å°å†™çš„ä¸è¡Œ**
+	system("cls"); //æ¸…å±
 }
 
-char hidden_number(char number[SIZE]) //»ñÈ¡ÊäÈëµÄÄÚÈİÏÔÊ¾Îª *
+char hidden_number(char number[SIZE]) //è·å–è¾“å…¥çš„å†…å®¹æ˜¾ç¤ºä¸º *
 {
 	int i = 0, flag = 0;
 	char input;
-	while (1) //¿ÉÒÔ¿ØÖÆwhileÑ­»·´ÎÊı£¬µ«ÕâÀïĞ´³ÉÁËÖ»ÄÜÍ¨¹ı»Ø³µ½áÊøº¯ÊıÊ¹ÓÃ¡£
+	while (1) //å¯ä»¥æ§åˆ¶whileå¾ªç¯æ¬¡æ•°ï¼Œä½†è¿™é‡Œå†™æˆäº†åªèƒ½é€šè¿‡å›è½¦ç»“æŸå‡½æ•°ä½¿ç”¨ã€‚
 	{
-		if ((input = getch()) != '\r') //½áÊøÌõ¼ş
+		if ((input = getch()) != '\r') //ç»“æŸæ¡ä»¶
 		{
 			if (input != '\b')
 			{
-				*(number + i++) = input; //Í¨¹ıÖ¸Õë¸øÊı×é¸³Öµ
-				printf("*");			 //»ØÏÔ*ºÅ
+				*(number + i++) = input; //é€šè¿‡æŒ‡é’ˆç»™æ•°ç»„èµ‹å€¼
+				printf("*");			 //å›æ˜¾*å·
 				//fflush(stdin);
 				scanf("%*[^\n]%*c");
 				flag++;
 			}
-			if (input == '\b' && flag != 0) //ÎªÁË²»ÈÃ\b \bÒ²É¾³ıµôÊäÈëÃÜÂëÇ°µÄÌáÊ¾ÎÄ×Ö¼´ÅĞ¶ÏflagÊÇ·ñÎª0
+			if (input == '\b' && flag != 0) //ä¸ºäº†ä¸è®©\b \bä¹Ÿåˆ é™¤æ‰è¾“å…¥å¯†ç å‰çš„æç¤ºæ–‡å­—å³åˆ¤æ–­flagæ˜¯å¦ä¸º0
 			{
-				flag--; //Èç¹ûÓÃ»§ÏëÒªbackspace£¬ÄÇÃ´flag×Ô¼õ
-				i--;	//Ê¹Ö¸ÕëÏòÇ°ÒÆ¶¯Ò»¸ñ
+				flag--; //å¦‚æœç”¨æˆ·æƒ³è¦backspaceï¼Œé‚£ä¹ˆflagè‡ªå‡
+				i--;	//ä½¿æŒ‡é’ˆå‘å‰ç§»åŠ¨ä¸€æ ¼
 				printf("\b \b");
 			}
 		}
 		else
 		{
-			*(number + i) = '\0'; //\0²»ÄÜÍü¼Ç
+			*(number + i) = '\0'; //\0ä¸èƒ½å¿˜è®°
 			//fflush(stdin);
 			scanf("%*[^\n]%*c");
 			printf("\n");
-			return input; //º¯Êıµ÷ÓÃ½áÊø
+			return input; //å‡½æ•°è°ƒç”¨ç»“æŸ
 		}
 	}
 }
 
-void illegal_input(void) //·Ç·¨ÊäÈë
+void illegal_input(void) //éæ³•è¾“å…¥
 {
 	system("cls");
-	border(); //ºáÏß
+	border(); //æ¨ªçº¿
 	printf("\n\t-------------------\n");
-	printf("\t---  ÊäÈë´íÎó!  ---\n");
+	printf("\t---  è¾“å…¥é”™è¯¯!  ---\n");
 	printf("\t-------------------\n\n");
-	border();  //ºáÏß
+	border();  //æ¨ªçº¿
 	//getchar();
 	while ((getchar()) != '\n');
-	CLS();	   //ÇåÆÁ¡¢ÔİÍ£
+	CLS();	   //æ¸…å±ã€æš‚åœ
 }
 
-void progress_bar(void) //½ø¶ÈÌõ
+void progress_bar(void) //è¿›åº¦æ¡
 {
 	int i = 0;
 	char proc[101];
 	memset(proc, 0, 101);
 	while (i <= 48)
 	{
-		/* printf("[%-s] %d%% \r", proc, i * 2); //¿ØÖÆÆğÊ¼Î»ÖÃ¼°´òÓ¡ */
-		printf("[%-s]\r", proc); //¿ØÖÆÆğÊ¼Î»ÖÃ¼°´òÓ¡
-		proc[i] = '>';			 //´òÓ¡½ø¶ÈÌõµÄĞÎ×´
-		fflush(stdout);			 //Ë¢ĞÂ»º³åÇø
-		Sleep(100);				 //¿ØÖÆ½ø¶ÈÌõµÄËÙ¶È
+		/* printf("[%-s] %d%% \r", proc, i * 2); //æ§åˆ¶èµ·å§‹ä½ç½®åŠæ‰“å° */
+		printf("[%-s]\r", proc); //æ§åˆ¶èµ·å§‹ä½ç½®åŠæ‰“å°
+		proc[i] = '>';			 //æ‰“å°è¿›åº¦æ¡çš„å½¢çŠ¶
+		fflush(stdout);			 //åˆ·æ–°ç¼“å†²åŒº
+		Sleep(100);				 //æ§åˆ¶è¿›åº¦æ¡çš„é€Ÿåº¦
 		i++;
 	}
 	printf("\n");
 }
 
-void read_file_name(void)	//¶ÁÈ¡ÎÄ¼şÄÚÈİ
+void read_file_name(void)	//è¯»å–æ–‡ä»¶å†…å®¹
 {
 	border();
-	if ((fp = fopen("log.bat", "r")) == NULL)   //  "r"  Ö»¶Á
+	if ((fp = fopen("log.bat", "r")) == NULL)   //  "r"  åªè¯»
 	{
-		printf("¶ÁÈ¡Ê§°Ü!\n");
+		printf("è¯»å–å¤±è´¥!\n");
 		exit(EXIT_FAILURE);
 	}
-	while ((content = fgetc(fp)) != EOF)    //¶ÁÈ¡ÎÄ¼şÄÚÈİÏÔÊ¾µ½ÆÁÄ»ÉÏ
+	while ((content = fgetc(fp)) != EOF)    //è¯»å–æ–‡ä»¶å†…å®¹æ˜¾ç¤ºåˆ°å±å¹•ä¸Š
 		putchar(content);
 	fclose(fp);
 	border();
 }
 
-void whether_delete(void) //ÊÇ·ñÉ¾³ı
+void whether_delete(void) //æ˜¯å¦åˆ é™¤
 {
 	getchar();
-	printf("ÊÇ·ñÒªÉ¾³ıÄÚÈİ( Y / N ): ");
+	printf("æ˜¯å¦è¦åˆ é™¤å†…å®¹( Y / N ): ");
 	while ((ch = getchar()) != EOF)
 	{
 		fp = fopen("log.bat", "r+");
 		if (ch == 'Y' || ch == 'y')
 		{
-			printf("ÇëÊäÈëÒªÉ¾³ıµÄÎÄ¼ş¼ĞÈ«³Æ: ");
+			printf("è¯·è¾“å…¥è¦åˆ é™¤çš„æ–‡ä»¶å¤¹å…¨ç§°: ");
 			scanf("%s", name);
 			printf("%s", name);
 			while (b)
@@ -120,27 +120,27 @@ void whether_delete(void) //ÊÇ·ñÉ¾³ı
 					printf("%s", name_1);
 					if (!strcmp(name_1, name))
 					{
-						remove(name);   //É¾³ıÎÄ¼ş
+						remove(name);   //åˆ é™¤æ–‡ä»¶
 						break;
 					}
 				}
 				else
 				{
 					border();
-					printf("ÊäÈë´íÎó!\n");
-					printf("ÇëÊäÈëÒªÉ¾³ıµÄÎÄ¼ş¼ĞÈ«³Æ: ");
+					printf("è¾“å…¥é”™è¯¯!\n");
+					printf("è¯·è¾“å…¥è¦åˆ é™¤çš„æ–‡ä»¶å¤¹å…¨ç§°: ");
 					scanf("%s", name);
 				}
 			}
-			printf("ÊÇ·ñ¼ÌĞøÉ¾³ıÎÄ¼ş( Y / N ): ");
+			printf("æ˜¯å¦ç»§ç»­åˆ é™¤æ–‡ä»¶( Y / N ): ");
 		}
 		else if (ch == 'N' || ch == 'n')
 			break;
 		else
 		{
 			border();
-			printf("ÊäÈë´íÎó!\n");
-			printf("ÊÇ·ñÒªÉ¾³ıÄÚÈİ( Y / N ): ");
+			printf("è¾“å…¥é”™è¯¯!\n");
+			printf("æ˜¯å¦è¦åˆ é™¤å†…å®¹( Y / N ): ");
 		}
 		fclose(fp);
 	}

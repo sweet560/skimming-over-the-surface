@@ -8,14 +8,14 @@
  */
 #include "head.h"
 
-//定义全局变量
+ //定义全局变量
 int a = ZERO, ch = ZERO, _dir = ZERO, _scf = ZERO, number = ZERO;
 bool b = true;                                             //真 true  假 false
 char content = ZERO;                                       //文件内容
-char line[SIZE1] = {ZERO};                                 // line[] 一行
-char name[SIZE] = {ZERO}, pws[SIZE] = {ZERO};              // name[] pws[]文件中的账户及密码
-char name_1[SIZE] = {ZERO}, pws_1[SIZE] = {ZERO};          //用于对比内容
-char UserAccount[SIZE] = {ZERO}, PassWords[SIZE] = {ZERO}; // UserAccount[] PassWords[]输入的账户及密码
-char time_str[BUFFER] = {ZERO};                            //表示返回的时间的字符串
-char time_str_1[BUFFER] = {ZERO};                          //表示返回的时间的字符串
-char diary_user[SIZE1 + SIZE1] = {ZERO};                   //用于储存日记名字
+char line[SIZE1] = { ZERO };                                 // line[] 一行
+char name[SIZE] = { ZERO }, pws[SIZE] = { ZERO };              // name[] pws[]文件中的账户及密码
+char name_1[SIZE] = { ZERO }, pws_1[SIZE] = { ZERO };          //用于对比内容
+char UserAccount[SIZE] = { ZERO }, PassWords[SIZE] = { ZERO }; // UserAccount[] PassWords[]输入的账户及密码
+char time_str[BUFFER] = { ZERO };                            //表示返回的时间的字符串
+char time_str_1[BUFFER] = { ZERO };                          //表示返回的时间的字符串
+char diary_user[SIZE1 + SIZE1] = { ZERO };                   //用于储存日记名字

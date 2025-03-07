@@ -1,59 +1,59 @@
 #include "head.h"
 
-void write_diary(void) //Ð´ÈÕ¼Ç
+void write_diary(void) //å†™æ—¥è®°
 {
-    _dir = chdir(time_str); //×ªµ½Ö¸¶¨ÎÄ¼þ¼ÐÂ·¾¶
-    if (_dir == 0) //ÑéÖ¤ÊÇ·ñÒÑ¾­µ½´ïÖ¸¶¨ÎÄ¼þ¼ÐÂ·¾¶ÄÚ
+    _dir = chdir(time_str); //è½¬åˆ°æŒ‡å®šæ–‡ä»¶å¤¹è·¯å¾„
+    if (_dir == 0) //éªŒè¯æ˜¯å¦å·²ç»åˆ°è¾¾æŒ‡å®šæ–‡ä»¶å¤¹è·¯å¾„å†…
     {
-        while (b)//´´½¨ÈÕ¼Ç
+        while (b)//åˆ›å»ºæ—¥è®°
         {
             border();
-            diary_menu_1(); // write_diary()²Ëµ¥
-            _scf = scanf("%d", &a); //scanf() »ñÈ¡Ê§°Ü£¬ ·µ»Ø0
+            diary_menu_1(); // write_diary()èœå•
+            _scf = scanf("%d", &a); //scanf() èŽ·å–å¤±è´¥ï¼Œ è¿”å›ž0
             border();
-            if (_scf == 0 || a > 2 || a < 1) //ÊäÈë´íÎó
+            if (_scf == 0 || a > 2 || a < 1) //è¾“å…¥é”™è¯¯
                 illegal_input();
             else
             {
-                //·ÖÅä¶¯Ì¬ÄÚ´æ ²¢ÏÈ¸³Óè "start "
-                char* diary_name = (char*)malloc(strlen("start ") + strlen(diary_user)); //·ÖÅä¶¯Ì¬ÄÚ´æ
-                strcpy(diary_name, "start ");                                             //½«str2 µÄÄÚÈÝ¸´ÖÆµ½ str1
+                //åˆ†é…åŠ¨æ€å†…å­˜ å¹¶å…ˆèµ‹äºˆ "start "
+                char* diary_name = (char*)malloc(strlen("start ") + strlen(diary_user)); //åˆ†é…åŠ¨æ€å†…å­˜
+                strcpy(diary_name, "start ");                                             //å°†str2 çš„å†…å®¹å¤åˆ¶åˆ° str1
 
-                if (a == 1) //×Ô¶¨ÒåÈÕ¼ÇÃû³Æ
+                if (a == 1) //è‡ªå®šä¹‰æ—¥è®°åç§°
                 {
                     //getchar();
-                    printf("ÊäÈëÈÕ¼ÇÃû³Æ: ");
+                    printf("è¾“å…¥æ—¥è®°åç§°: ");
                     scanf("%s", diary_user);
                     strcat(diary_user, ".txt");
-                    if ((fp = fopen(diary_user, "a+")) == NULL) //¼ìÑéÊÇ·ñ´´½¨³É¹¦
+                    if ((fp = fopen(diary_user, "a+")) == NULL) //æ£€éªŒæ˜¯å¦åˆ›å»ºæˆåŠŸ
                     {
-                        printf("´´½¨Ê§°Ü!\n");
+                        printf("åˆ›å»ºå¤±è´¥!\n");
                         exit(EXIT_FAILURE);
                     }
                     else
                     {
                         fclose(fp);
-                        strcat(diary_name, diary_user); //ÔÚstr1 ºóÃæÌí¼Ó str2 µÄÄÚÈÝ
-                        system(diary_name);             //Ê¹ÓÃwindow cmd ÃüÁî´ò¿ªÖ¸¶¨ÎÄ¼þ
+                        strcat(diary_name, diary_user); //åœ¨str1 åŽé¢æ·»åŠ  str2 çš„å†…å®¹
+                        system(diary_name);             //ä½¿ç”¨window cmd å‘½ä»¤æ‰“å¼€æŒ‡å®šæ–‡ä»¶
 
-                        //Éú³Élog.bat 
+                        //ç”Ÿæˆlog.bat 
                         if ((fp = fopen("log.bat", "a+")) == NULL)
                         {
-                            printf("´´½¨Ê§°Ü!\n");
+                            printf("åˆ›å»ºå¤±è´¥!\n");
                             exit(EXIT_FAILURE);
                         }
-                        fprintf(fp, "%s\n", diary_user);    //½«ÎÄ¼þ¼ÐÃû³ÆÐ´Èë log.bat
-                        fclose(fp); //¹Ø±Õ log.bat
+                        fprintf(fp, "%s\n", diary_user);    //å°†æ–‡ä»¶å¤¹åç§°å†™å…¥ log.bat
+                        fclose(fp); //å…³é—­ log.bat
                     }
                     break;
                 }
-                else if (a == 2) //ÒÔÈÕÆÚ¼°Ê±¼ä×Ô¶¯ÃüÃû
+                else if (a == 2) //ä»¥æ—¥æœŸåŠæ—¶é—´è‡ªåŠ¨å‘½å
                 {
                     strftime(time_str_1, BUFFER, "%Y%m%d-%H%M%S", info);
                     strcat(time_str_1, ".txt");
                     if ((fp = fopen(time_str_1, "a+")) == NULL)
                     {
-                        printf("´´½¨Ê§°Ü!\n");
+                        printf("åˆ›å»ºå¤±è´¥!\n");
                         exit(EXIT_FAILURE);
                     }
                     else
@@ -62,42 +62,42 @@ void write_diary(void) //Ð´ÈÕ¼Ç
                         strcat(diary_name, time_str_1);
                         system(diary_name);
 
-                        //Éú³Élog.bat 
+                        //ç”Ÿæˆlog.bat 
                         if ((fp = fopen("log.bat", "a+")) == NULL)
                         {
-                            printf("´´½¨Ê§°Ü!\n");
+                            printf("åˆ›å»ºå¤±è´¥!\n");
                             exit(EXIT_FAILURE);
                         }
-                        fprintf(fp, "%s\n", time_str_1);    //½«ÎÄ¼þ¼ÐÃû³ÆÐ´Èë log.bat
-                        fclose(fp); //¹Ø±Õ log.bat
+                        fprintf(fp, "%s\n", time_str_1);    //å°†æ–‡ä»¶å¤¹åç§°å†™å…¥ log.bat
+                        fclose(fp); //å…³é—­ log.bat
                     }
                     break;
                 }
-                free(diary_name); // ²»ÒËÌ«ÔçÊÍ·Å¶¯Ì¬ÄÚ´æ£¬·ñÔò»á³öÏÖ ¶ÑËð»µÄÚ´æÐ¹Â©»òÕßÊÇ ¹Ø±ÕÁË¶¯Ì¬ÄÚ´æÈÔÓÐÊý¾ÝÐ´ÈëÄÚ´æ
+                free(diary_name); // ä¸å®œå¤ªæ—©é‡Šæ”¾åŠ¨æ€å†…å­˜ï¼Œå¦åˆ™ä¼šå‡ºçŽ° å †æŸåå†…å­˜æ³„æ¼æˆ–è€…æ˜¯ å…³é—­äº†åŠ¨æ€å†…å­˜ä»æœ‰æ•°æ®å†™å…¥å†…å­˜
             }
         }
         chdir("..");
         return;
     }
-    if (_dir == -1)//³ÌÐò´íÎó
+    if (_dir == -1)//ç¨‹åºé”™è¯¯
     {
         border();
-        printf("--- ³ÌÐòÆô¶¯¹ÊÕÏ ---\n");
-        printf("--- ÇëÖØÐÂÆô¶¯ ---\n");
+        printf("--- ç¨‹åºå¯åŠ¨æ•…éšœ ---\n");
+        printf("--- è¯·é‡æ–°å¯åŠ¨ ---\n");
         exit(EXIT_FAILURE);
         border();
         CLS();
     }
 }
-void consult_diary(void) //²éÔÄÈÕ¼Ç
+void consult_diary(void) //æŸ¥é˜…æ—¥è®°
 {
     char* diary_name = (char*)malloc(strlen("start ") + strlen(name));
     strcpy(diary_name, "start ");
 
     while (b)
     {
-        read_file_name();   //¶ÁÈ¡ÎÄ¼þÄÚÈÝ
-        printf("ÊäÈëÒª²é¿´µÄÔÂ·Ý: ");
+        read_file_name();   //è¯»å–æ–‡ä»¶å†…å®¹
+        printf("è¾“å…¥è¦æŸ¥çœ‹çš„æœˆä»½: ");
         scanf("%s", name);
         _dir = chdir(name);
         if (_dir == 0)
@@ -107,44 +107,44 @@ void consult_diary(void) //²éÔÄÈÕ¼Ç
                 if (_dir == 0)
                 {
                     CLS();
-                    read_file_name();   //¶ÁÈ¡ÎÄ¼þÄÚÈÝ
-                    printf("ÊäÈëÒª²éÔÄµÄÈÕ¼Ç: ");
+                    read_file_name();   //è¯»å–æ–‡ä»¶å†…å®¹
+                    printf("è¾“å…¥è¦æŸ¥é˜…çš„æ—¥è®°: ");
                     scanf("%s", name);
                     fp = fopen("log.bat", "r");
                     while (b)
                     {
-                        //ÊäÈëÎÄ¼þÃû´íÎó
+                        //è¾“å…¥æ–‡ä»¶åé”™è¯¯
                         if ((fgets(line, sizeof(line), fp)) != NULL)
                         {
                             sscanf(line, "%s", name_1);
                             if (!strcmp(name_1, name))
                             {
-                                //´ò¿ªÖ¸¶¨ÎÄ¼þ
+                                //æ‰“å¼€æŒ‡å®šæ–‡ä»¶
                                 strcat(diary_name, name);
                                 system(diary_name);
                                 strcpy(diary_name, "start ");
                                 while ((getchar()) != '\n');
                                 break;
-                            } 
+                            }
                         }
                         else
                         {
                             border();
-                            printf("ÊäÈë´íÎó!\n");
-                            printf("ÊäÈëÒª²éÔÄµÄÈÕ¼Ç: ");
+                            printf("è¾“å…¥é”™è¯¯!\n");
+                            printf("è¾“å…¥è¦æŸ¥é˜…çš„æ—¥è®°: ");
                             scanf("%s", name);
                             rewind(fp);
-                        }     
+                        }
                     }
                     fclose(fp);
                 }
                 border();
-                printf("ÊÇ·ñ¼ÌÐø²éÔÄÆäËûÈÕ¼Ç( Y / N ): ");
+                printf("æ˜¯å¦ç»§ç»­æŸ¥é˜…å…¶ä»–æ—¥è®°( Y / N ): ");
                 while ((ch = getchar()) != EOF)
                 {
                     if (ch == 'Y' || ch == 'y')
                         break;
-                    else if (ch == 'N' || ch == 'n')    //·µ»ØÈÕ¼ÇÏµÍ³Ö÷²Ëµ¥
+                    else if (ch == 'N' || ch == 'n')    //è¿”å›žæ—¥è®°ç³»ç»Ÿä¸»èœå•
                     {
                         chdir("..");
                         return 0;
@@ -153,30 +153,30 @@ void consult_diary(void) //²éÔÄÈÕ¼Ç
                     {
                         illegal_input();
                         border();
-                        printf("ÊÇ·ñ¼ÌÐø²éÔÄÆäËûÈÕ¼Ç( Y / N ): ");
+                        printf("æ˜¯å¦ç»§ç»­æŸ¥é˜…å…¶ä»–æ—¥è®°( Y / N ): ");
                     }
                 }
             }
         }
-        else  //ÊäÈë´íÎó
+        else  //è¾“å…¥é”™è¯¯
             illegal_input();
     }
     free(diary_name);
 }
-void delete_diary(void) //É¾³ýÈÕ¼Ç
+void delete_diary(void) //åˆ é™¤æ—¥è®°
 {/*
-    remove(); ÓÃÓÚÉ¾³ýÎÄ¼þ
+    remove(); ç”¨äºŽåˆ é™¤æ–‡ä»¶
  */
     while (b)
     {
-        read_file_name();   //Î»ÓÚ ÓÃ»§Ãû ÎÄ¼þ
+        read_file_name();   //ä½äºŽ ç”¨æˆ·å æ–‡ä»¶
         whether_delete();
-        printf("ÊäÈëÒª²é¿´µÄÄÚÈÝ: ");
+        printf("è¾“å…¥è¦æŸ¥çœ‹çš„å†…å®¹: ");
         scanf("%s", name);
         _dir = chdir(name);
         if (_dir == 0)
         {
-            read_file_name();   //Î»ÓÚ ÔÂ·ÝÃû ÎÄ¼þ
+            read_file_name();   //ä½äºŽ æœˆä»½å æ–‡ä»¶
             whether_delete();
             chdir("..");
         }
@@ -184,17 +184,17 @@ void delete_diary(void) //É¾³ýÈÕ¼Ç
             illegal_input();
     }
 }
-void import_diary(void) //µ¼ÈëÈÕ¼Ç
+void import_diary(void) //å¯¼å…¥æ—¥è®°
 {
-    printf("--- ´ý¿ª·¢ ---\n");
+    printf("--- å¾…å¼€å‘ ---\n");
     CLS();
 }
-void export_diary(void) //µ¼³öÈÕ¼Ç
+void export_diary(void) //å¯¼å‡ºæ—¥è®°
 {
-    printf("--- ´ý¿ª·¢ ---\n");
+    printf("--- å¾…å¼€å‘ ---\n");
     CLS();
 }
 /*
-    chdir(f:\\test); ´ò¿ªÎÄ¼þ\ÎÄ¼þ¼Ð
-    mkdir(f:\\test); ½¨Á¢ÐÂÄ¿Â¼
+    chdir(f:\\test); æ‰“å¼€æ–‡ä»¶\æ–‡ä»¶å¤¹
+    mkdir(f:\\test); å»ºç«‹æ–°ç›®å½•
 */

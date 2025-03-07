@@ -1,93 +1,93 @@
 #include "head.h"
 
-int personal_center(void) //ÃÜÂëĞŞ¸Ä¡¢½øÈëÈÕ¼Ç¡¢·µ»Ø¡¢ÍË³ö
+int personal_center(void) //å¯†ç ä¿®æ”¹ã€è¿›å…¥æ—¥è®°ã€è¿”å›ã€é€€å‡º
 {
-    char tpy_pws[SIZE];   // temporary_passwords ÁÙÊ±ÃÜÂë
-    char tpy_pws_1[SIZE]; // ÁÙÊ±ÃÜÂë2
-    char tpy_name[SIZE];  //ÁÙÊ±ÕË»§
-    char temporary[SIZE]; //ÁÙÊ±
+    char tpy_pws[SIZE];   // temporary_passwords ä¸´æ—¶å¯†ç 
+    char tpy_pws_1[SIZE]; // ä¸´æ—¶å¯†ç 2
+    char tpy_name[SIZE];  //ä¸´æ—¶è´¦æˆ·
+    char temporary[SIZE]; //ä¸´æ—¶
     fp = fopen("users/user.txt", "r+");
 
-    menu_1();                        //ÃÜÂëĞŞ¸Ä¡¢½øÈëÈÕ¼Ç¡¢·µ»Ø¡¢ÍË³ö
-    while ((scanf("%d", &a)) != EOF) //ÅĞ¶ÏÊäÈëÊÇ·ñÕıÈ·²¢Ìø×ª¶ÔÓ¦µÄÑ¡Ïî
+    menu_1();                        //å¯†ç ä¿®æ”¹ã€è¿›å…¥æ—¥è®°ã€è¿”å›ã€é€€å‡º
+    while ((scanf("%d", &a)) != EOF) //åˆ¤æ–­è¾“å…¥æ˜¯å¦æ­£ç¡®å¹¶è·³è½¬å¯¹åº”çš„é€‰é¡¹
     {
-        system("cls"); //ÇåÆÁ
-        if (a == 1)    //ÃÜÂëĞŞ¸Ä
+        system("cls"); //æ¸…å±
+        if (a == 1)    //å¯†ç ä¿®æ”¹
         {
-            if (fp == NULL) // r+  ¿É¶Á¿ÉĞ´, ±ØĞë´æÔÚ, ¿ÉÔÚÈÎÒâÎ»ÖÃ¶ÁĞ´, ¶ÁÓëĞ´¹²ÓÃÍ¬Ò»¸öÖ¸Õë
+            if (fp == NULL) // r+  å¯è¯»å¯å†™, å¿…é¡»å­˜åœ¨, å¯åœ¨ä»»æ„ä½ç½®è¯»å†™, è¯»ä¸å†™å…±ç”¨åŒä¸€ä¸ªæŒ‡é’ˆ
             {
-                printf("ÎÄ¼ş´ò¿ªÊ§°Ü!\n");
+                printf("æ–‡ä»¶æ‰“å¼€å¤±è´¥!\n");
                 exit(EXIT_FAILURE);
             }
-            else //ĞŞ¸ÄÃÜÂë
+            else //ä¿®æ”¹å¯†ç 
             {
                 do
                 {
-                    //ÑéÖ¤ÃÜÂë
-                    if ((fgets(line, sizeof(line), fp)) != NULL)                // fgets ¶ÁÈ¡Ò»ĞĞ£¬½øĞĞÅĞ¶ÏÊÇ·ñ¶ÁÈ¡µ½ÎÄµµÄ©Î²
-                    {                                                           //Èç¹û¶ÁÈ¡µ½ÎÄµµÄ©Î²Ôò±íÊ¾ÕË»§ÃÜÂëÆ¥Åä´íÎó
-                        sscanf(line, "%s %s", tpy_name, temporary);             // sscanf ´ÓÒ»¸ö×Ö·û´®ÀïÃæ¶ÁÈ¡¶«Î÷
-                        if (!strcmp(tpy_name, name) && !strcmp(temporary, pws)) // strcmp(str1,str2) ¶Ô±È×Ö·û´®1ºÍ×Ö·û´®2
+                    //éªŒè¯å¯†ç 
+                    if ((fgets(line, sizeof(line), fp)) != NULL)                // fgets è¯»å–ä¸€è¡Œï¼Œè¿›è¡Œåˆ¤æ–­æ˜¯å¦è¯»å–åˆ°æ–‡æ¡£æœ«å°¾
+                    {                                                           //å¦‚æœè¯»å–åˆ°æ–‡æ¡£æœ«å°¾åˆ™è¡¨ç¤ºè´¦æˆ·å¯†ç åŒ¹é…é”™è¯¯
+                        sscanf(line, "%s %s", tpy_name, temporary);             // sscanf ä»ä¸€ä¸ªå­—ç¬¦ä¸²é‡Œé¢è¯»å–ä¸œè¥¿
+                        if (!strcmp(tpy_name, name) && !strcmp(temporary, pws)) // strcmp(str1,str2) å¯¹æ¯”å­—ç¬¦ä¸²1å’Œå­—ç¬¦ä¸²2
                         {
-                            border(); //ºáÏß
-                            printf("\n--- ÑéÖ¤µÇÂ½ÃÜÂë ---\n\n");
-                            printf("ÇëÏÈÊäÈëÃÜÂë: ");
-                            hidden_number(PassWords);    //»ñÈ¡ÊäÈë²¢ÏÔÊ¾Îª * ºÅ
-                            if (!strcmp(PassWords, pws)) //ÑéÖ¤ÃÜÂëÊÇ·ñÕıÈ·
+                            border(); //æ¨ªçº¿
+                            printf("\n--- éªŒè¯ç™»é™†å¯†ç  ---\n\n");
+                            printf("è¯·å…ˆè¾“å…¥å¯†ç : ");
+                            hidden_number(PassWords);    //è·å–è¾“å…¥å¹¶æ˜¾ç¤ºä¸º * å·
+                            if (!strcmp(PassWords, pws)) //éªŒè¯å¯†ç æ˜¯å¦æ­£ç¡®
                             {
-                                printf("--- ÑéÖ¤³É¹¦ ---\n");
-                                border(); //ºáÏß
-                                //¸ü¸ÄÃÜÂë
-                                printf("\n--- ĞŞ¸ÄÃÜÂë ---\n\n");
-                                printf("ÇëÊäÈëĞÂÃÜÂë: ");
-                                hidden_number(tpy_pws); //»ñÈ¡ÊäÈë²¢ÏÔÊ¾Îª * ºÅ
-                                printf("ÇëÔÙ´ÎÊäÈëĞÂÃÜÂë: ");
-                                hidden_number(tpy_pws_1); //»ñÈ¡ÊäÈë²¢ÏÔÊ¾Îª * ºÅ
-                                //½«Ô­À´µÄÃÜÂë¸²¸Çµô
-                                if (!strcmp(tpy_pws, tpy_pws_1)) //Á½´ÎÃÜÂëÏàµÈ
+                                printf("--- éªŒè¯æˆåŠŸ ---\n");
+                                border(); //æ¨ªçº¿
+                                //æ›´æ”¹å¯†ç 
+                                printf("\n--- ä¿®æ”¹å¯†ç  ---\n\n");
+                                printf("è¯·è¾“å…¥æ–°å¯†ç : ");
+                                hidden_number(tpy_pws); //è·å–è¾“å…¥å¹¶æ˜¾ç¤ºä¸º * å·
+                                printf("è¯·å†æ¬¡è¾“å…¥æ–°å¯†ç : ");
+                                hidden_number(tpy_pws_1); //è·å–è¾“å…¥å¹¶æ˜¾ç¤ºä¸º * å·
+                                //å°†åŸæ¥çš„å¯†ç è¦†ç›–æ‰
+                                if (!strcmp(tpy_pws, tpy_pws_1)) //ä¸¤æ¬¡å¯†ç ç›¸ç­‰
                                 {
-                                    fseek(fp, -8, SEEK_CUR); //½«ÎÄ¼şÁ÷µ÷»Øµ½ÒªĞŞ¸ÄµÄÃÜÂëµÄÎ»ÖÃ  SEEK_CUR µ±Ç°Î»ÖÃ
-                                    //ºóĞøĞèÕë¶ÔÃÜÂë´óĞ¡×ö³öÏŞÖÆ¼°ÃÜÂëÀàĞÍ×ö³öÏŞÖÆ
-                                    fprintf(fp, "%s\n", tpy_pws); //¸²¸ÇÔ­À´µÄÃÜÂë
-                                    printf("ÃÜÂëĞŞ¸Ä³É¹¦,ÇëµÇÂ¼!\n");
-                                    border();   //ºáÏß
-                                    Sleep(500); //ÔİÍ£0.5Ãë
+                                    fseek(fp, -8, SEEK_CUR); //å°†æ–‡ä»¶æµè°ƒå›åˆ°è¦ä¿®æ”¹çš„å¯†ç çš„ä½ç½®  SEEK_CUR å½“å‰ä½ç½®
+                                    //åç»­éœ€é’ˆå¯¹å¯†ç å¤§å°åšå‡ºé™åˆ¶åŠå¯†ç ç±»å‹åšå‡ºé™åˆ¶
+                                    fprintf(fp, "%s\n", tpy_pws); //è¦†ç›–åŸæ¥çš„å¯†ç 
+                                    printf("å¯†ç ä¿®æ”¹æˆåŠŸ,è¯·ç™»å½•!\n");
+                                    border();   //æ¨ªçº¿
+                                    Sleep(500); //æš‚åœ0.5ç§’
                                     b = false;
                                     fclose(fp);
                                 }
                             }
                             else
-                                illegal_input(); //·Ç·¨ÊäÈë
+                                illegal_input(); //éæ³•è¾“å…¥
                         }
                     }
                 } while (b);
                 b = true;
-                return 0; //µÇÂ¼¡¢×¢²á½çÃæ
+                return 0; //ç™»å½•ã€æ³¨å†Œç•Œé¢
             }
         }
-        else if (a == 2) //½øÈëÈÕ¼Ç
+        else if (a == 2) //è¿›å…¥æ—¥è®°
             return 2;
-        else if (a == 3) //ÍË³öµÇÂ½
+        else if (a == 3) //é€€å‡ºç™»é™†
         {
-            getchar();                      //ÊÍ·Å»º³åÇø
-            Exit_menu();                    //ÊÇ·ñÍË³ö²Ëµ¥
-            while ((ch = getchar()) != EOF) //È·ÈÏÍË³öµÇÂ½ »ò ¼ÌĞøÊ¹ÓÃ
+            getchar();                      //é‡Šæ”¾ç¼“å†²åŒº
+            Exit_menu();                    //æ˜¯å¦é€€å‡ºèœå•
+            while ((ch = getchar()) != EOF) //ç¡®è®¤é€€å‡ºç™»é™† æˆ– ç»§ç»­ä½¿ç”¨
             {
-                if (ch == 'Y' || ch == 'y') //·µ»Ø main.c
+                if (ch == 'Y' || ch == 'y') //è¿”å› main.c
                     return 0;
-                else if (ch == 'N' || ch == 'n') //¼ÌĞøÔËĞĞ²Ëµ¥
+                else if (ch == 'N' || ch == 'n') //ç»§ç»­è¿è¡Œèœå•
                     break;
-                else //·Ç·¨ÊäÈë
+                else //éæ³•è¾“å…¥
                 {
-                    illegal_input(); //·Ç·¨ÊäÈë
-                    Exit_menu();     //ÊÇ·ñÍË³ö²Ëµ¥
+                    illegal_input(); //éæ³•è¾“å…¥
+                    Exit_menu();     //æ˜¯å¦é€€å‡ºèœå•
                 }
             }
         }
-        else if (a == 4) //ÍË³ö³ÌĞò
+        else if (a == 4) //é€€å‡ºç¨‹åº
             return 3;
-        else                 //·Ç·¨ÊäÈë
-            illegal_input(); //·Ç·¨ÊäÈë
-        menu_1();            //ÃÜÂëĞŞ¸Ä¡¢½øÈëÈÕ¼Ç¡¢·µ»Ø¡¢ÍË³ö
+        else                 //éæ³•è¾“å…¥
+            illegal_input(); //éæ³•è¾“å…¥
+        menu_1();            //å¯†ç ä¿®æ”¹ã€è¿›å…¥æ—¥è®°ã€è¿”å›ã€é€€å‡º
     }
 }

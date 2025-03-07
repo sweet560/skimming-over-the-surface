@@ -1,60 +1,60 @@
-#pragma once //½ö±àÒëÒ»´Î
+#pragma once //ä»…ç¼–è¯‘ä¸€æ¬¡
 #ifndef _ONCE
-    #define _ONCE
-    
+#define _ONCE
 
-    //Í·ÎÄ¼şÁĞ±í
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <string.h>
-    #include <stdbool.h>
-    #include <conio.h> //getch() Ô­ĞÍ
-    #include <time.h>  //Ê±¼äº¯ÊıÍ·ÎÄ¼ş
-    #include <io.h>    //chdir() Ô­ĞÍ   ´´½¨ÎÄ¼ş ¸ü¸Ä´ò¿ªÎÄ¼şÂ·¾¶º¯ÊıÍ·ÎÄ¼ş
-    #include <direct.h>
 
-    //³£Á¿ÁĞ±í
-    #define ZERO 0
-    #define NUM 50
-    #define SIZE 128
-    #define SIZE1 256
-    #define BUFFER 80
+//å¤´æ–‡ä»¶åˆ—è¡¨
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include <conio.h> //getch() åŸå‹
+#include <time.h>  //æ—¶é—´å‡½æ•°å¤´æ–‡ä»¶
+#include <io.h>    //chdir() åŸå‹   åˆ›å»ºæ–‡ä»¶ æ›´æ”¹æ‰“å¼€æ–‡ä»¶è·¯å¾„å‡½æ•°å¤´æ–‡ä»¶
+#include <direct.h>
 
-    //ÒıÓÃÈ«¾Ö±äÁ¿¡¢Ö¸Õë
-    extern bool b;
-    extern int a, ch, _dir, _scf, number;
-    extern char content;
-    extern char line[SIZE1], name[SIZE], pws[SIZE], name_1[SIZE], pws_1[SIZE], UserAccount[SIZE], PassWords[SIZE]; 
-    extern char time_str[BUFFER], time_str_1[BUFFER], diary_user[SIZE1 + SIZE1];
-    FILE *fp, *fp1;        //ÎÄ¼şÖ¸Õë
-    time_t now_time; //ÉùÃ÷ time_t ÀàĞÍ±äÁ¿
-    struct tm *info; // tm ½á¹¹Ö¸Õë
-    size_t se;	//sizeof()·µ»ØÖµ
+//å¸¸é‡åˆ—è¡¨
+#define ZERO 0
+#define NUM 50
+#define SIZE 128
+#define SIZE1 256
+#define BUFFER 80
 
-    //º¯ÊıÉùÃ÷ÁĞ±í
-    void border(void);        //±ß¿ò
-    void welcome(void);       //Æô¶¯½çÃæ
-    void end_exit(void);      //½áÊø½çÃæ
-    void illegal_input(void); //·Ç·¨ÊäÈë
-    void menu(void);          //²Ëµ¥½çÃæ£ºÕËºÅ×¢²á¡¢ÕËºÅµÇÂ½¡¢ÍË³ö
-    void menu_1(void);        //²Ëµ¥½çÃæ£ºÃÜÂëĞŞ¸Ä¡¢¹¦ÄÜÑ¡Ôñ¡¢ÍË³ö¡¢·µ»Ø
-    void Exit_menu(void);     //ÊÇ·ñÍË³ö²Ëµ¥
-    void CLS(void);           //ÔİÍ£¡¢ÇåÆÁ
-    void progress_bar(void);  //½ø¶ÈÌõ
+//å¼•ç”¨å…¨å±€å˜é‡ã€æŒ‡é’ˆ
+extern bool b;
+extern int a, ch, _dir, _scf, number;
+extern char content;
+extern char line[SIZE1], name[SIZE], pws[SIZE], name_1[SIZE], pws_1[SIZE], UserAccount[SIZE], PassWords[SIZE];
+extern char time_str[BUFFER], time_str_1[BUFFER], diary_user[SIZE1 + SIZE1];
+FILE* fp, * fp1;        //æ–‡ä»¶æŒ‡é’ˆ
+time_t now_time; //å£°æ˜ time_t ç±»å‹å˜é‡
+struct tm* info; // tm ç»“æ„æŒ‡é’ˆ
+size_t se;	//sizeof()è¿”å›å€¼
 
-    char hidden_number(char number[SIZE]); //»ñÈ¡ÊäÈëµÄÄÚÈİÏÔÊ¾Îª *
+//å‡½æ•°å£°æ˜åˆ—è¡¨
+void border(void);        //è¾¹æ¡†
+void welcome(void);       //å¯åŠ¨ç•Œé¢
+void end_exit(void);      //ç»“æŸç•Œé¢
+void illegal_input(void); //éæ³•è¾“å…¥
+void menu(void);          //èœå•ç•Œé¢ï¼šè´¦å·æ³¨å†Œã€è´¦å·ç™»é™†ã€é€€å‡º
+void menu_1(void);        //èœå•ç•Œé¢ï¼šå¯†ç ä¿®æ”¹ã€åŠŸèƒ½é€‰æ‹©ã€é€€å‡ºã€è¿”å›
+void Exit_menu(void);     //æ˜¯å¦é€€å‡ºèœå•
+void CLS(void);           //æš‚åœã€æ¸…å±
+void progress_bar(void);  //è¿›åº¦æ¡
 
-    int login_screen(void);    //µÇÂ½¡¢×¢²á ½çÃæ
-    int personal_center(void); //ÃÜÂëĞŞ¸Ä¡¢½øÈëÈÕ¼Ç¡¢·µ»Ø¡¢ÍË³ö
-    int diary_system(void);    //ÈÕ¼ÇÏµÍ³
-    void diary_menu(void);     //ÈÕ¼ÇÈí¼ş²Ëµ¥
-    void write_diary(void);    //Ğ´ÈÕ¼Ç
-    void diary_menu_1(void);   // write_diary()²Ëµ¥
-    void consult_diary(void);  //²éÔÄÈÕ¼Ç
-    void read_file_name(void); //ÎÄ¼şÃû¶ÁÈ¡
-    void delete_diary(void);   //É¾³ıÈÕ¼Ç
-    void whether_delete(void); //ÊÇ·ñÉ¾³ı
-    void import_diary(void);   //µ¼ÈëÈÕ¼Ç
-    void export_diary(void);   //µ¼³öÈÕ¼Ç
+char hidden_number(char number[SIZE]); //è·å–è¾“å…¥çš„å†…å®¹æ˜¾ç¤ºä¸º *
+
+int login_screen(void);    //ç™»é™†ã€æ³¨å†Œ ç•Œé¢
+int personal_center(void); //å¯†ç ä¿®æ”¹ã€è¿›å…¥æ—¥è®°ã€è¿”å›ã€é€€å‡º
+int diary_system(void);    //æ—¥è®°ç³»ç»Ÿ
+void diary_menu(void);     //æ—¥è®°è½¯ä»¶èœå•
+void write_diary(void);    //å†™æ—¥è®°
+void diary_menu_1(void);   // write_diary()èœå•
+void consult_diary(void);  //æŸ¥é˜…æ—¥è®°
+void read_file_name(void); //æ–‡ä»¶åè¯»å–
+void delete_diary(void);   //åˆ é™¤æ—¥è®°
+void whether_delete(void); //æ˜¯å¦åˆ é™¤
+void import_diary(void);   //å¯¼å…¥æ—¥è®°
+void export_diary(void);   //å¯¼å‡ºæ—¥è®°
 
 #endif

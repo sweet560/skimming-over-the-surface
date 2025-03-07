@@ -2,35 +2,35 @@
 
 int main(void)
 {
-	//½çÃæÉèÖÃ
-	system("title ¸¡¹âÂÓÓ°"); //Ê¹ÓÃsystem µ÷ÓÃDOS ÃüÁî  titleÎª±êÌâÃüÁî
-	system("color 0F");		  // color ÓÉ2Î»Êý¿ØÖÆÑÕÉ«,µÚÒ»¸öÎª±³¾°£¬µÚ¶þ¸öÔòÎªÇ°¾°
-							  /*
-								color ÑÕÉ«ÉèÖÃ
-								  0 = ºÚÉ«       8 = »ÒÉ«
-								  1 = À¶É«       9 = µ­À¶É«
-								  2 = ÂÌÉ«       A = µ­ÂÌÉ«
-								  3 = ºþÀ¶É«     B = µ­Ç³ÂÌÉ«
-								  4 = ºìÉ«       C = µ­ºìÉ«
-								  5 = ×ÏÉ«       D = µ­×ÏÉ«
-								  6 = »ÆÉ«       E = µ­»ÆÉ«
-								  7 = °×É«       F = ÁÁ°×É«
-							  */
-	//³ÌÐò¿ªÊ¼Ö´ÐÐ
-	welcome(); //Æô¶¯½çÃæ
+	//ç•Œé¢è®¾ç½®
+	system("title æµ®å…‰æŽ å½±"); //ä½¿ç”¨system è°ƒç”¨DOS å‘½ä»¤  titleä¸ºæ ‡é¢˜å‘½ä»¤
+	system("color 0F");		  // color ç”±2ä½æ•°æŽ§åˆ¶é¢œè‰²,ç¬¬ä¸€ä¸ªä¸ºèƒŒæ™¯ï¼Œç¬¬äºŒä¸ªåˆ™ä¸ºå‰æ™¯
+	/*
+	  color é¢œè‰²è®¾ç½®
+		0 = é»‘è‰²       8 = ç°è‰²
+		1 = è“è‰²       9 = æ·¡è“è‰²
+		2 = ç»¿è‰²       A = æ·¡ç»¿è‰²
+		3 = æ¹–è“è‰²     B = æ·¡æµ…ç»¿è‰²
+		4 = çº¢è‰²       C = æ·¡çº¢è‰²
+		5 = ç´«è‰²       D = æ·¡ç´«è‰²
+		6 = é»„è‰²       E = æ·¡é»„è‰²
+		7 = ç™½è‰²       F = äº®ç™½è‰²
+	*/
+	//ç¨‹åºå¼€å§‹æ‰§è¡Œ
+	welcome(); //å¯åŠ¨ç•Œé¢
 
-	while (b) //½çÃæ½»»¥
+	while (b) //ç•Œé¢äº¤äº’
 	{
-		if (a == 0) //µÇÂ¼¡¢×¢²á½çÃæ
+		if (a == 0) //ç™»å½•ã€æ³¨å†Œç•Œé¢
 			a = login_screen();
-		else if (a == 1) //¸öÈËÖÐÐÄ
+		else if (a == 1) //ä¸ªäººä¸­å¿ƒ
 			a = personal_center();
-		else if (a == 2) //ÈÕ¼ÇÏµÍ³
+		else if (a == 2) //æ—¥è®°ç³»ç»Ÿ
 			a = diary_system();
-		else if (a == 3) //½áÊø½çÃæ
+		else if (a == 3) //ç»“æŸç•Œé¢
 		{
 			end_exit();
-			return 0; //½áÊøÑ­»·
+			return 0; //ç»“æŸå¾ªçŽ¯
 		}
 	}
 	return 0;
