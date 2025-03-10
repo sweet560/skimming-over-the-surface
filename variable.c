@@ -2,14 +2,14 @@
  * @file   <浮光掠影> Window 10 Cmd窗口 模式下运行
  * @author 伍悦匿匿(437830488@qq.com)
  * @brief  在这里记录下点点滴滴，让往日的岁月犹如今夕：浮光掠影，岁月如梭
- * @date  2022-10-24
+ * @date  2025-03-10
  * @version  V1.10.24-alpha
  * @copyright Copyright (c) 2022 伍悦匿匿工作室
  */
 #include "head.h"
 
  //定义全局变量
-int a = ZERO, ch = ZERO, _dir = ZERO, _scf = ZERO, number = ZERO;
+int a = ZERO, ch = ZERO, _dir = ZERO, _scf = ZERO, number = ZERO;	
 bool b = true;                                             //真 true  假 false
 char content = ZERO;                                       //文件内容
 char line[SIZE1] = { ZERO };                                 // line[] 一行
