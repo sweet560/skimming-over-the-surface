@@ -122,6 +122,8 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdclatest</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,26 +133,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\head.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\.gitattributes" />
     <None Include="..\.gitignore" />
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\diary_function.c" />
-    <ClCompile Include="..\diary_system.c" />
-    <ClCompile Include="..\login_screen.c" />
-    <ClCompile Include="..\main.c" />
-    <ClCompile Include="..\menu.c" />
-    <ClCompile Include="..\personal_center.c" />
-    <ClCompile Include="..\variable.c" />
-    <ClCompile Include="..\welcome.c" />
-    <ClCompile Include="..\wheel.c" />
+    <Text Include="..\LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\LICENSE.txt" />
+    <ClInclude Include="head.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="diary_system.c" />
+    <ClCompile Include="login_screen.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="menu.c" />
+    <ClCompile Include="personal_center.c" />
+    <ClCompile Include="variable.c" />
+    <ClCompile Include="welcome.c" />
+    <ClCompile Include="wheel.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

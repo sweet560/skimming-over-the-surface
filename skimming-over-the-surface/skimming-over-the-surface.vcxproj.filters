@@ -15,11 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\head.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\.gitattributes">
       <Filter>资源文件</Filter>
     </None>
@@ -31,37 +26,39 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\diary_function.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\diary_system.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\login_screen.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\menu.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\personal_center.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\variable.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\welcome.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\wheel.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="..\LICENSE.txt">
       <Filter>资源文件</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="head.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="variable.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="login_screen.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="personal_center.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="welcome.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wheel.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="diary_system.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
