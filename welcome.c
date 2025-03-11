@@ -1,20 +1,20 @@
 #include "head.h"
 
-void welcome(void) //Æô¶¯½çÃæ
+void welcome(void) //å¯åŠ¨ç•Œé¢
 {
-    border();
-	printf("\n\n\t\t¸¡¹âÂÓÓ°\n\n"); //±êÌâ
-    printf("\t\t     ");    
-	system("date/T");   //ÏÔÊ¾ÈÕÆÚ
-    border();
-	progress_bar(); //½ø¶ÈÌõ
+	border();
+	printf("\n\n\t\tæµ®å…‰æ å½±\n\n"); //æ ‡é¢˜
+	printf("\t\t     ");    
+	system("date/T");   //æ˜¾ç¤ºæ—¥æœŸ
+	border();
+	progress_bar(); //è¿›åº¦æ¡
 }
 
-void end_exit(void) //½áÊø½çÃæ
+void end_exit(void) //ç»“æŸç•Œé¢
 {
-    system("cls");
-    border();
-    printf("\n\n\t      ¸¡¹âÂÓÓ°\n\n");
-    printf("\t\t\t-- ÎéÔÃÄäÄä\n");
-    border();
+	system("cls");
+	border();
+	printf("\n\n\t      æµ®å…‰æ å½±\n\n");
+	printf("\t\t\t-- ä¼æ‚¦åŒ¿åŒ¿\n");
+	border();
 }
